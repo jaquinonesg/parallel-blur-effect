@@ -4,9 +4,9 @@ Si llegaste a este repositorio por casualidad y tienes alguna expectativa buena,
 
 Si ya tu sabe a lo que viene pues:
 
-Para instalar opencv:&nbsp;
-cd OpenCV&nbsp;
-chmod +x opencv.sh&nbsp;
-Poner una buena champeta de fondo&nbsp;
-./opencv.sh&nbsp;
+Para instalar opencv:<br>
+cd OpenCV<br>
+chmod +x opencv.sh<br>
+Poner una buena champeta de fondo<br>
+./opencv.sh<br>
 Esperar...
