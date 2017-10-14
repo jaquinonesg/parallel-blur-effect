@@ -1,4 +1,4 @@
-Si llegaste a este repositorio por casualidad y tiene alguna expectativa buena, estás equivocado.
+Si llegaste a este repositorio por casualidad y tienes alguna expectativa buena, estás equivocado.
 
 Si ya tu sabe a lo que viene pues:
 
