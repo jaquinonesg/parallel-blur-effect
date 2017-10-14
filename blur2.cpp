@@ -15,7 +15,7 @@ int channels=0;
 
 int main(int argc, char* argv[])
 {
-  IplImage* img = cvLoadImage("4kk.jpg");
+  IplImage* img = cvLoadImage("xxx.jpg");
   int Ksize=
   Mat m = cv::cvarrToMat(img);
   CvSize dim = cvGetSize(img);

@@ -4,7 +4,7 @@
 int main(int argc, char* argv[])
 {
 
-    IplImage* img = cvLoadImage("c:/data/2.jpg",0);
+    IplImage* img = cvLoadImage("xxx.jpg",0);
     IplImage* dst = cvCloneImage(img);
     int height,width,step,channels;
     int height2,width2,step2,channels2;
