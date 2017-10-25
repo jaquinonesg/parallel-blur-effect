@@ -126,7 +126,16 @@ int main(int argc, char** argv){
 
         if (rc) {   cout << "Error: no se puede crear hilo," << rc << endl; exit(-1);   }
         init = ending;
-    }    
+    }
+
+    void *ret_join;
+    for( int i = 0; i < NUM_THREADS; i++ ) {
+      rc = pthread_join(threads[i], &ret_join );
+          if(rc != 0) {
+                  cout<<"pthread_join failed";
+                  exit(EXIT_FAILURE);
+          }
+    }
 
     // Titles of images
     std::string original_window = "El Momo";
