@@ -86,16 +86,16 @@ void *blur(void *threadid) {
                   }
               }
        imageFiltered.at<cv::Vec3b>(i,j)[2]=(image.at<cv::Vec3b>(i,j)[2]+aux_r)/(aux_div);
-          imageFiltered.at<cv::Vec3b>(i,j)[1]=(image.at<cv::Vec3b>(i,j)[1]+aux_g)/(aux_div);
-          imageFiltered.at<cv::Vec3b>(i,j)[0]=(image.at<cv::Vec3b>(i,j)[0]+aux_b)/(aux_div);
+       imageFiltered.at<cv::Vec3b>(i,j)[1]=(image.at<cv::Vec3b>(i,j)[1]+aux_g)/(aux_div);
+       imageFiltered.at<cv::Vec3b>(i,j)[0]=(image.at<cv::Vec3b>(i,j)[0]+aux_b)/(aux_div);
      }
    }
-    pthread_exit(NULL);
+   pthread_exit(NULL);
  }
 
 int main(int argc, char** argv){
 
-    if (argc != 3){ printf("Uso: ./blurParalelo.out <ruta_imagen> <numero_hilos> <numero_kernel>\n");    return -1; }
+    if (argc != 4){ printf("Uso: ./blurParalelo.out <ruta_imagen> <numero_hilos> <numero_kernel>\n");    return -1; }
     image = imread( argv[1], 1 );
     imageFiltered = imread( argv[1], 1 );
     if ( !image.data ){ printf("No se pudo leer la imagen. \n");    return -1;  }
@@ -139,7 +139,8 @@ int main(int argc, char** argv){
     // Show resulting image
     namedWindow(result_window, WINDOW_AUTOSIZE);
     moveWindow(result_window, w + 100, 0);
-    imshow(result_window, result);
+    //imshow(result_window, result);
+    imshow(result_window, imageFiltered);
 
     waitKey(0);
     pthread_exit(NULL);
