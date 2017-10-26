@@ -6,7 +6,7 @@ using namespace cv;
 // Adjacent positions
 int dj[] = {0,1,0,-1,0,-1,-1,1,1};
 int di[] = {-1,0,1,0,0,-1,1,-1,1};
-
+int kernel;
 /**
 * image: Image to be blurred
 * i: Pixel position y
@@ -46,7 +46,7 @@ Vec3b get_average( const Mat &image, const int &i, const int &j ){
 
 int main(int argc, char** argv){
 
-    if (argc != 2){
+    if (argc != 3){
         printf("Uso: ./test.out <ruta_imagen>\n");
         return -1;
     }
@@ -58,6 +58,9 @@ int main(int argc, char** argv){
         printf("No se pudo leer la imagen. \n");
         return -1;
     }
+
+    kernel = atoi(argv[3]);
+    
 
     int h = image.size().height;
     int w = image.size().width;
