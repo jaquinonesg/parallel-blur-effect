@@ -1,14 +1,51 @@
 Imagen1
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
+                                                                  
+__      _                         ___ _ _       _                 
+/ _\ ___(_) ___ _ __   ___ ___    / __(_) |_ ___| |__   ___  ___  
+\ \ / __| |/ _ \ '_ \ / __/ _ \  /__\// | __/ __| '_ \ / _ \/ __| 
+_\ \ (__| |  __/ | | | (_|  __/ / \/  \ | || (__| | | |  __/\__ \ 
+\__/\___|_|\___|_| |_|\___\___| \_____/_|\__\___|_| |_|\___||___/ 
+                                                                  
+**********************************
+----------------------------------
+             Secuencial           
+----------------------------------
+**********************************
+----------------------------------
+             img1                 
+----------------------------------
+Usando un kernel de 3
+Usando un kernel de 4
+Usando un kernel de 5
+Usando un kernel de 6
+Usando un kernel de 7
+Usando un kernel de 8
+Usando un kernel de 9
+Usando un kernel de 10
+Usando un kernel de 11
+Usando un kernel de 12
+Usando un kernel de 13
+Usando un kernel de 14
+Usando un kernel de 15
+
+**********************************
+----------------------------------
+          Paralelizado            
+----------------------------------
+**********************************
+----------------------------------
+             img1                 
+----------------------------------
+Usando un kernel de 3
+Usando un kernel de 4
+Usando un kernel de 5
+Usando un kernel de 6
+Usando un kernel de 7
+Usando un kernel de 8
+Usando un kernel de 9
+Usando un kernel de 10
+Usando un kernel de 11
+Usando un kernel de 12
+Usando un kernel de 13
+Usando un kernel de 14
+Usando un kernel de 15
