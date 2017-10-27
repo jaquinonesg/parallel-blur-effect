@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string>
 #include <opencv2/opencv.hpp>
+#include <omp.h>
 
 using namespace cv;
 using namespace std;
@@ -48,12 +49,16 @@ Vec3b get_average( const int &y, const int &x ){
 }
 
 void blur(){    
+    #pragma omp parallel for
+
     // Calculate pixel average for every pixel
     for( int i = 0; i < height; ++i ){
         for( int j = 0; j < width; ++j ){
             result.at<Vec3b>(i,j) = get_average(i, j);
         }
-    }
+        // int ID = omp_get_thread_num();
+        // printf("hello(%d)", ID);
+    }    
 }
 
 int main(int argc, char** argv){

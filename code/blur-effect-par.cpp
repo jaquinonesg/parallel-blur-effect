@@ -107,19 +107,11 @@ int main(int argc, char** argv){
         }
     }
 
-    // Titles of images
-    string original_window = "Original image";
-    string result_window = "Blurred image";
+    string file_name;
+    file_name = "blurred-";
+    file_name += argv[1];
+    imwrite(file_name, result);
 
-    // Show original image
-    namedWindow(original_window, WINDOW_AUTOSIZE);
-    imshow(original_window, image);
-
-    // Show resulting image
-    namedWindow(result_window, WINDOW_AUTOSIZE);
-    imshow(result_window, result);
-
-    waitKey(0);
     pthread_exit(NULL);
     return 0;
 }
