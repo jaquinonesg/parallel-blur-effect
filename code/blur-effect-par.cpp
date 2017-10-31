@@ -65,7 +65,7 @@ void *blur( void *thread_id ){
 int main(int argc, char** argv){
 
     if (argc != 4){
-        printf("Use: ./test.out <img_path> <num_kernel> <num_thread>\n");
+        printf("Use: ./blurParalelo.out <img_path> <num_kernel> <num_thread>\n");
         return -1;
     }
 

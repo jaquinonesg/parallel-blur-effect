@@ -13,26 +13,24 @@ echo "**********************************" >> mediciones.txt
 kernel=3
 
 echo "----------------------------------" >> mediciones.txt
-echo "             img1                 " >> mediciones.txt
+echo "         img1 720p                " >> mediciones.txt
 echo "----------------------------------" >> mediciones.txt
 while [ $kernel -lt 16 ];
     do
     echo "Usando un kernel de" $kernel >> mediciones.txt
     { time ./blurSecuencial.out img1.jpg $kernel >/dev/null 2>&1; } 2>> mediciones.txt
-    ./blurParalelo.out img1.jpg $kernel
     kernel=$[$kernel+2]
 done
 
 kernel=3
 echo " "
 echo "----------------------------------" >> mediciones.txt
-echo "             img2                 " >> mediciones.txt
+echo "          img2 1080p              " >> mediciones.txt
 echo "----------------------------------" >> mediciones.txt
 while [ $kernel -lt 16 ];
     do
     echo "Usando un kernel de" $kernel >> mediciones.txt
     { time ./blurSecuencial.out img2.jpg $kernel >/dev/null 2>&1; } 2>> mediciones.txt
-    ./blurParalelo.out img1.jpg $kernel
     echo " "
     kernel=$[$kernel+2]
 done
@@ -40,13 +38,12 @@ done
 kernel=3
 echo " "
 echo "----------------------------------" >> mediciones.txt
-echo "             img3                 " >> mediciones.txt
+echo "          img3 4k                 " >> mediciones.txt
 echo "----------------------------------" >> mediciones.txt
 while [ $kernel -lt 16 ];
     do
     echo "Usando un kernel de" $kernel >> mediciones.txt
     { time ./blurSecuencial.out img3.jpg $kernel >/dev/null 2>&1; } 2>> mediciones.txt
-    ./blurParalelo.out img1.jpg $kernel
     echo " "
     kernel=$[$kernel+2]
 done
@@ -68,12 +65,12 @@ echo "----------------------------------" >> mediciones.txt
 echo "**********************************" >> mediciones.txt
  
 kernel=3
-threads= 2
+threads=2
 echo "----------------------------------" >> mediciones.txt
-echo "             img1                 " >> mediciones.txt
+echo "          img1 720p               " >> mediciones.txt
 echo "----------------------------------" >> mediciones.txt
 
-while [ $threads -lt 17];
+while [ $threads -lt 17 ];
     do
     while [ $kernel -lt 16 ];
         do
@@ -87,12 +84,12 @@ while [ $threads -lt 17];
 done
 
 kernel=3
-threads= 2
+threads=2
 echo "----------------------------------" >> mediciones.txt
-echo "             img2                 " >> mediciones.txt
+echo "          img2 1080p              " >> mediciones.txt
 echo "----------------------------------" >> mediciones.txt
 
-while [ $threads -lt 17];
+while [ $threads -lt 17 ];
     do
     while [ $kernel -lt 16 ];
         do
@@ -106,12 +103,12 @@ while [ $threads -lt 17];
 done
 
 kernel=3
-threads= 2
+threads=2
 echo "----------------------------------" >> mediciones.txt
-echo "             img3                 " >> mediciones.txt
+echo "          img3 4k                 " >> mediciones.txt
 echo "----------------------------------" >> mediciones.txt
 
-while [ $threads -lt 17];
+while [ $threads -lt 17 ];
     do
     while [ $kernel -lt 16 ];
         do

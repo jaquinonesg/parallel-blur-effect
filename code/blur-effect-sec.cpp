@@ -59,7 +59,7 @@ void blur(){
 int main(int argc, char** argv){
 
     if (argc != 3){
-        printf("Use: ./test.out <img_path> <num_kernel>\n");
+        printf("Use: ./blurSecuencial.out <img_path> <num_kernel>\n");
         return -1;
     }
 
