@@ -70,17 +70,17 @@ echo "----------------------------------" >> mediciones.txt
 echo "          img1 720p               " >> mediciones.txt
 echo "----------------------------------" >> mediciones.txt
 
-while [ $threads -lt 17 ];
+while [ $kernel -lt 16 ];
     do
-    while [ $kernel -lt 16 ];
+	while [ $threads -lt 17 ];
         do
         echo "Usando una cantidad de hilos de" $threads >> mediciones.txt
         echo "Usando un kernel de" $kernel >> mediciones.txt
-        kernel=$[$kernel+2]
         { time ./blurParalelo.out img1.jpg $kernel $threads >/dev/null 2>&1; } 2>> mediciones.txt
+	threads=$[$threads*2]
     done
-    threads=$[$threads*2]
-    kernel=3
+    kernel=$[$kernel+2]
+    threads=2
 done
 
 kernel=3
@@ -89,17 +89,17 @@ echo "----------------------------------" >> mediciones.txt
 echo "          img2 1080p              " >> mediciones.txt
 echo "----------------------------------" >> mediciones.txt
 
-while [ $threads -lt 17 ];
+while [ $kernel -lt 16 ];
     do
-    while [ $kernel -lt 16 ];
+	while [ $threads -lt 17 ];
         do
         echo "Usando una cantidad de hilos de" $threads >> mediciones.txt
         echo "Usando un kernel de" $kernel >> mediciones.txt
-        kernel=$[$kernel+2]
         { time ./blurParalelo.out img2.jpg $kernel $threads >/dev/null 2>&1; } 2>> mediciones.txt
+	threads=$[$threads*2]
     done
-    threads=$[$threads*2]
-    kernel=3
+    kernel=$[$kernel+2]
+    threads=2
 done
 
 kernel=3
@@ -108,15 +108,15 @@ echo "----------------------------------" >> mediciones.txt
 echo "          img3 4k                 " >> mediciones.txt
 echo "----------------------------------" >> mediciones.txt
 
-while [ $threads -lt 17 ];
+while [ $kernel -lt 16 ];
     do
-    while [ $kernel -lt 16 ];
+	while [ $threads -lt 17 ];
         do
         echo "Usando una cantidad de hilos de" $threads >> mediciones.txt
         echo "Usando un kernel de" $kernel >> mediciones.txt
-        kernel=$[$kernel+2]
         { time ./blurParalelo.out img3.jpg $kernel $threads >/dev/null 2>&1; } 2>> mediciones.txt
+	threads=$[$threads*2]
     done
-    threads=$[$threads*2]
-    kernel=3
+    kernel=$[$kernel+2]
+    threads=2
 done
