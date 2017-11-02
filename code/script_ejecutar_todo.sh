@@ -19,6 +19,7 @@ while [ $kernel -lt 16 ];
     do
     echo "Usando un kernel de" $kernel >> mediciones.txt
     { time ./blurSecuencial.out img1.jpg $kernel >/dev/null 2>&1; } 2>> mediciones.txt
+    echo "" >> mediciones.txt
     kernel=$[$kernel+2]
 done
 
@@ -31,7 +32,7 @@ while [ $kernel -lt 16 ];
     do
     echo "Usando un kernel de" $kernel >> mediciones.txt
     { time ./blurSecuencial.out img2.jpg $kernel >/dev/null 2>&1; } 2>> mediciones.txt
-    echo " "
+    echo "" >> mediciones.txt
     kernel=$[$kernel+2]
 done
 
@@ -44,7 +45,7 @@ while [ $kernel -lt 16 ];
     do
     echo "Usando un kernel de" $kernel >> mediciones.txt
     { time ./blurSecuencial.out img3.jpg $kernel >/dev/null 2>&1; } 2>> mediciones.txt
-    echo " "
+    echo "" >> mediciones.txt
     kernel=$[$kernel+2]
 done
 
@@ -77,6 +78,8 @@ while [ $kernel -lt 16 ];
         echo "Usando una cantidad de hilos de" $threads >> mediciones.txt
         echo "Usando un kernel de" $kernel >> mediciones.txt
         { time ./blurParalelo.out img1.jpg $kernel $threads >/dev/null 2>&1; } 2>> mediciones.txt
+	echo "" >> mediciones.txt
+	echo "" >> mediciones.txt
 	threads=$[$threads*2]
     done
     kernel=$[$kernel+2]
@@ -96,6 +99,8 @@ while [ $kernel -lt 16 ];
         echo "Usando una cantidad de hilos de" $threads >> mediciones.txt
         echo "Usando un kernel de" $kernel >> mediciones.txt
         { time ./blurParalelo.out img2.jpg $kernel $threads >/dev/null 2>&1; } 2>> mediciones.txt
+	echo "" >> mediciones.txt
+	echo "" >> mediciones.txt
 	threads=$[$threads*2]
     done
     kernel=$[$kernel+2]
@@ -115,6 +120,8 @@ while [ $kernel -lt 16 ];
         echo "Usando una cantidad de hilos de" $threads >> mediciones.txt
         echo "Usando un kernel de" $kernel >> mediciones.txt
         { time ./blurParalelo.out img3.jpg $kernel $threads >/dev/null 2>&1; } 2>> mediciones.txt
+	echo "" >> mediciones.txt
+	echo "" >> mediciones.txt
 	threads=$[$threads*2]
     done
     kernel=$[$kernel+2]
