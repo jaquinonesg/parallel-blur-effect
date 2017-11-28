@@ -71,13 +71,15 @@ int main(int argc, char** argv){
 	int height;
 	int width;
 	int kernel;
+	int num_threads;
+	int num_blocks;
 
     cudaMalloc(&height_d, sizeof(int));
     cudaMalloc(&width_d, sizeof(int));
     cudaMalloc(&kernel_d, sizeof(int));
   
-    if (argc != 3){
-        printf("Use: ./blurSecuencial.out <img_path> <num_kernel>\n");
+    if (argc != 5){
+        printf("Use: ./blurSecuencial.out <img_path> <num_kernel> <num_threads> <num_blocks>\n");
         return -1;
     }
 
@@ -89,6 +91,8 @@ int main(int argc, char** argv){
     }
 
     kernel = atoi(argv[2]);
+    num_threads = atoi(argv[3]);
+    num_blocks = atoi(argv[4]);
 
     height = image.size().height;
     width = image.size().width;
@@ -119,9 +123,10 @@ int main(int argc, char** argv){
     
     cudaMemcpy(image_mat_d, image_mat, sizeof(int) * height * width * 3, cudaMemcpyHostToDevice);
     
-    int blockSize = 256;
-	int numBlocks = (height * width + blockSize - 1) / blockSize;
-    blur<<<numBlocks, blockSize>>>(image_mat_d, result_mat_d, height_d, width_d, kernel_d);
+//	int num_threads = 256;
+//	int num_blocks = (height * width + num_threads - 1) / num_threads;
+
+    blur<<<num_blocks, num_threads>>>(image_mat_d, result_mat_d, height_d, width_d, kernel_d);
 
 	cudaMemcpy(result_mat, result_mat_d, sizeof(int) * height * width * 3, cudaMemcpyDeviceToHost);
 
